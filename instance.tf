@@ -60,6 +60,14 @@ resource "aws_security_group" "private" {
     cidr_blocks = [var.vpc_cidr]
   }
 
+  ingress {
+    description = "curl from my vpc"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = [var.vpc_cidr]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -79,7 +87,9 @@ resource "aws_instance" "private" {
   vpc_security_group_ids = [aws_security_group.private.id]
   subnet_id              = aws_subnet.private[0].id
 
+  user_data = file("user-data.sh")
+
   tags = {
-    Name = "${var.env_code}-public"
+    Name = "${var.env_code}-private"
   }
 }
