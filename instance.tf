@@ -27,7 +27,7 @@ resource "aws_instance" "public" {
   ami                         = "ami-0a72af05d27b49ccb"
   instance_type               = "t2.micro"
   associate_public_ip_address = true
-  key_name                    = "main"
+  key_name                    = "pawan"
   vpc_security_group_ids      = [aws_security_group.public.id]
   subnet_id                   = aws_subnet.public[0].id
 
@@ -64,7 +64,7 @@ resource "aws_security_group" "private" {
 resource "aws_instance" "private" {
   ami                    = "ami-0a72af05d27b49ccb"
   instance_type          = "t2.micro"
-  key_name               = "main"
+  key_name               = "pawan"
   vpc_security_group_ids = [aws_security_group.private.id]
   subnet_id              = aws_subnet.private[0].id
 
