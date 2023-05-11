@@ -6,6 +6,6 @@ private_cidr = ["10.0.2.0/24", "10.0.3.0/24"]
 
 availability_zones = ["ap-southeast-1a", "ap-southeast-1b"]
 
-env_code = "pawanp1"
+env_code = "ekbana"
 
 my_public_ip = "110.44.123.47"

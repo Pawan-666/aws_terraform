@@ -1,1 +1,1 @@
-### Creating vpc with 2 private and 2 public subnets with ec2-instance in them
+Running user-data.sh file in the instance to provision nginx in the public server. Also passing data.tf file to use latest ubuntu image.
